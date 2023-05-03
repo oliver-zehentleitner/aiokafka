@@ -109,7 +109,7 @@ class AIOKafkaClient:
             raise ValueError("`security_protocol` should be SSL or PLAINTEXT")
         if security_protocol in ["SSL", "SASL_SSL"] and ssl_context is None:
             raise ValueError(
-                "`ssl_context` is mandatory if security_protocol=='SSL'")
+                "`ssl_context` is mandatory if security_protocol == 'SSL' or 'SASL_SSL'")
         if security_protocol in ["SASL_SSL", "SASL_PLAINTEXT"]:
             if sasl_mechanism not in (
                     "PLAIN", "GSSAPI", "SCRAM-SHA-256", "SCRAM-SHA-512",
